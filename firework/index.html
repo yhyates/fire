@@ -47,9 +47,8 @@
 		</div>
 
 
-		<div style="color: white; text-align: center; font-size: 25px;">🧨🧨🧨网站部署上线中(15s)....🧨🧨🧨</div>
-
-
+		<div class="dynamicword" style="color: white; text-align: center; font-size: 25px;">🧨网站部署上线中(15s)...🧨</div>
+		<div class="dynamicword" style="color: white; text-align: center; font-size: 10px;">等待域名解析生效</div>
 
 		<!-- App -->
 		<div class="container">			
@@ -147,7 +146,19 @@
 		<script src='js/Stage.js'></script>
 		<script src='js/MyMath.js'></script>
 		<script src="js/index.js"></script>
-
+		<script type="text/javascript">   	
+			var txt=document.getElementById("heartText").innerHTML;
+			var heartTextCopy=document.getElementById('heartTextCopy');
+			var tem=0;
+			var inter=setInterval(function(){
+				tem++;
+				heartTextCopy.innerHTML=txt.substring(0,tem);
+				if(tem>txt.length){
+					clearInterval(inter);
+				}
+			},200)
+		</script>
+	 
 	</body>
 
 </html>
