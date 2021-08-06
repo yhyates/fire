@@ -813,7 +813,7 @@ function init() {
 	appNodes.shellType.innerHTML = options;
 	// shell size
 	options = '';
-	['3"', '4"', '6"', '10"', '12"', '16"'].forEach((opt, i) => options += `<option value="${i}">${opt}</option>`);
+	['16"', '4"', '6"', '10"', '12"', '16"'].forEach((opt, i) => options += `<option value="${i}">${opt}</option>`);
 	appNodes.shellSize.innerHTML = options;
 	
 	setOptionsForSelect(appNodes.quality, [
@@ -831,7 +831,7 @@ function init() {
 	// 0.9 is mobile default
 	setOptionsForSelect(
 		appNodes.scaleFactor,
-		[0.5, 0.62, 0.75, 0.9, 1.0, 1.5, 2.0]
+		[0.5, 0.62, 0.75, 0.9, 1.3, 1.5, 2.0]
 		.map(value => ({ value: value.toFixed(2), label: `${value*100}%` }))
 	);
 	
@@ -1593,6 +1593,7 @@ function floralEffect(star) {
 	BurstFlash.add(star.x, star.y, 46);
 	soundManager.playSound('burstSmall');
 }
+
 
 // Floral burst with willow stars
 function fallingLeavesEffect(star) {
