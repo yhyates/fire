@@ -194,7 +194,7 @@ const store = {
 				return;
 			}
 			// Only restore validated values
-			const sizeInt = parseInt(size, 10);
+			const sizeInt = parseInt(size, 16);
 			if (sizeInt >= 0 && sizeInt <= 4) {
 				this.state.config.size = String(sizeInt);
 			}
@@ -813,7 +813,7 @@ function init() {
 	appNodes.shellType.innerHTML = options;
 	// shell size
 	options = '';
-	['16"', '4"', '6"', '10"', '12"', '16"'].forEach((opt, i) => options += `<option value="${i}">${opt}</option>`);
+	['16"', '4"', '6"', '16"', '12"', '16"'].forEach((opt, i) => options += `<option value="${i}">${opt}</option>`);
 	appNodes.shellSize.innerHTML = options;
 	
 	setOptionsForSelect(appNodes.quality, [
